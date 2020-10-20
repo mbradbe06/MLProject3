@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Architecture Classifier</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    </head>
+
+    <body class="text-center bg-secondary text-light">
+          
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Architecture Classification</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <img id="prevImage" class="hidden">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup"></div>
+        </nav>
+            <br>
+            <br>
+            <br>
+            <h1>Architecture Classifier</h1>
+                <p class="lead"></p>
+            <h5>Choose a file for classification</h5>
+            <input id="upload" class="btn btn-sm btn-outline-light" type="file" accept="image/jpeg" />
+                <div id="upload-caption"></div>
+            <br>
+            <div style="margin-bottom: 2rem;">
+              <input type="button" value="Classify" class="btn btn-sm btn-light" onclick="classifyImage();" />
+              <input type="button" value="Clear" class="btn btn-sm btn-light" onclick="clearField();" />
+            </div>
+            <br>
+            <br>
+            <div class="container">
+                <div class="row">
+                <div class="col-sm"></div>
+                  <div class="col-sm">
+                    <div id="image-box">
+                        <img id="showImage" />
+                        <br>
+                        <h3 id="classResult" class="hidden"></h3>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <h5 id="descriptionResult" class="hidden text-center"></h5>
+                  </div>
+                  <div class="col-sm"></div>
+                </div>
+              </div>
+            <!-- <div id="image-box">
+                <img id="showImage" />
+                <br>
+                <h3 id="classResult" class="hidden"></h3>
+                <br>
+                <h5 id="descriptionResult" class="hidden"></h5>
+            </div> -->
+    
+        <script type="text/javascript" src="../static/main.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    </body>
+      
+</html>
