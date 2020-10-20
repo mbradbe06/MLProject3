@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Heart Attack Predictor App</title>
+	 <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css" rel="stylesheet">
+</head>
+<body>
+	<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="/">Heart Attact Predictor</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/dataset">Dataset</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+
+
+    </ul>
+ <!--    <form class="form-inline my-2 my-lg-0" method="POST" action="/predict">
+      <input class="form-control mr-sm-2" type="text" name="namequery" placeholder="" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Predict</button>
+    </form> -->
+  </div>
+</nav>
+<br/>
+<br/>
+<!-- blue #0686e4 -->
+<div class="jumbotron" style="background:#2d2d2d;color:#fff">
+    <div class="container">
+      <h2 class="display-3">Heart Attact Predictor</h2>
+      <p>Machine Learning Techniques</p>
+      <p><a class="btn btn-success waves-effect btn-lg" href="/" role="button">Refresh &raquo;</a></p>
+    </div>
+  </div>
+<br/>
+
+<div class="container" >
+<form method="POST" action="/predict">
+		
+		<!-- Clean Layout -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+		          <div class="card mb-10 shadow-sm" id="custom_card">
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="age">Age:</label>
+		          	  <input type="number" class="form-control form-control-sm" id="age" name="age" min=40 value="40">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+		          	<div>
+		          	 <div class="form-check-inline">
+		          	 	<label class="form-check-label">
+		          	 	<h6>Gender:</h6>
+		          	 </label>
+		          	 </div>
+		          	<div class="form-check-inline">
+		          	  <label class="form-check-label">
+		          	    <input type="radio" class="form-check-input" name="sex" value="1" checked="checked">Male
+		          	  </label>
+		          	</div>
+		          	<div class="form-check-inline">
+		          	  <label class="form-check-label">
+		          	    <input type="radio" class="form-check-input" name="sex" value="0">Female
+		          	  </label>
+		          	</div>
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+		          	<div>
+		          	 <div class="form-check-inline">
+		          	 	<label class="form-check-label">
+		          	 	<h6>Anaemia:</h6
+		          	 		>
+		          	 </label>
+		          	 </div>
+		          	<div class="form-check-inline">
+		          	  <label class="form-check-label">
+		          	    <input type="radio" class="form-check-input" name="anaemia" value="0" checked="checked">No
+		          	  </label>
+		          	</div>
+		          	<div class="form-check-inline">
+		          	  <label class="form-check-label">
+		          	    <input type="radio" class="form-check-input" name="anaemia" value="1">Yes
+		          	  </label>
+		          	</div>
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+		          	<div>
+		          	 <div class="form-check-inline">
+		          	 	<label class="form-check-label">
+		          	 	<h6>Diabetes:</h6>
+		          	 </label>
+		          	 </div>
+		          	<div class="form-check-inline">
+		          	  <label class="form-check-label">
+		          	    <input type="radio" class="form-check-input" name="diabetes" value="0" checked="checked">No
+		          	  </label>
+		          	</div>
+		          	<div class="form-check-inline">
+		          	  <label class="form-check-label">
+		          	    <input type="radio" class="form-check-input" name="diabetes" value="1">Yes
+		          	  </label>
+		          	</div>
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+		          	<div>
+		          	 <div class="form-check-inline">
+		          	 	<label class="form-check-label">
+		          	 	<h6>High Blood Pressure:</h6>
+		          	 </label>
+		          	 </div>
+		          	<div class="form-check-inline">
+		          	  <label class="form-check-label">
+		          	    <input type="radio" class="form-check-input" name="hbp" value="0" checked="checked">No
+		          	  </label>
+		          	</div>
+		          	<div class="form-check-inline">
+		          	  <label class="form-check-label">
+		          	    <input type="radio" class="form-check-input" name="hbp" value="0">Yes
+		          	  </label>
+		          	</div>
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+		          	<div>
+		          	 <div class="form-check-inline">
+		          	 	<label class="form-check-label">
+		          	 	<h6>Are you a smoker?</h6>
+		          	 </label>
+		          	 </div>
+		          	<div class="form-check-inline">
+		          	  <label class="form-check-label">
+		          	    <input type="radio" class="form-check-input" name="smoking" value="0" checked="checked">No
+		          	  </label>
+		          	</div>
+		          	<div class="form-check-inline">
+		          	  <label class="form-check-label">
+		          	    <input type="radio" class="form-check-input" name="smoking" value="1">Yes
+		          	  </label>
+		          	</div>
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	
+				</div>
+			</div>
+
+
+
+			<div class="col-md-5">
+		          <div class="card mb-10 shadow-sm" id="custom_card2">
+		          	
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="creat_phos">Creatinine Phosphokinase:</label>
+		          	  <input type="number" class="form-control form-control-sm" id="creat_phos" name="creat_phos" min=23 value='23' max="7861">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="eject_frac">Ejection Fraction:</label>
+		          	  <input type="number" class="form-control form-control-sm" id="eject_frac" name="eject_frac" min=14 value='14' max="80">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="platelets">Platelets:</label>
+		          	  <input type="number" class="form-control form-control-sm" id="platelets" name="platelets" min=25100 value='25100' max="850000">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="ser_creat">Serum Creatinine:</label>
+		          	  <input type="number" class="form-control form-control-sm" id="ser_creat" name="ser_creat" min=0.5 value='0.5' max="9.4">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="ser_sod">Serum Sodium:</label>
+		          	  <input type="number" class="form-control form-control-sm" id="ser_sod" name="ser_sod" min=113 value='113' max="148">
+		          	</div>
+		          	<!-- Feature Ends here -->
+					
+				</div>
+			</div>
+		</div>
+		</div>
+		<!-- Clean Layout ends here -->	
+<button type="reset" class="btn btn-outline-success">Reset</button>
+<button type="submit" class="btn btn-primary">Predict</button>
+</form>
+</div>
+<br/>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6" >
+          <div class="card mb-10 shadow-sm" id="custom_card">
+          	<h4>Result</h4>
+          	<h6>Original Data</h6>
+          	<pre>{{ sample_result }}</pre>
+          	<br/>
+
+			
+		</div>
+	</div>
+
+
+
+	<div class="col-md-6" >
+          <div class="card mb-10 shadow-sm" id="custom_card2" style="background-color:#2d2d2d; color:white;padding:5px">
+          	<h4>Prediction</h4>
+			<div class="alert alert-primary" role="alert">
+			  {{ prediction }}
+			</div>
+			<hr/>
+			<h6>Probability Score</h6>
+			<p>{{ pred_probalility_score }}</p>
+			
+		</div>
+	</div>
+</div>
+	<br/>
+  <br/>
+  <br/>
+
+</div>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/js/mdb.min.js"></script>
+
+</body>
+</html>
